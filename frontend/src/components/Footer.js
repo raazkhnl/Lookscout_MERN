@@ -33,7 +33,7 @@ const Footer = () => {
       </div>
 
       {/* Main Footer */}
-      <div className="row container-fluid mx-auto p-2">
+      <div className="row container-fluid mx-auto py-4">
   {/* 1st Column */}
   <div className="col-md-2 mx-auto col-12 custom-padding pb-3">
     <img className='img-fluid' src={logo} alt="Logo" />
