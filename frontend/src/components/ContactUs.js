@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import SummaryApi from '../common';
+import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 const ContactUs = () => {
     const [data, setData]= useState({
@@ -9,6 +12,8 @@ const ContactUs = () => {
         message:"",
         agree: false,
     })
+    const navigate = useNavigate()
+
     const handleOnChange = (e) => {
         const { name, value, type, checked } = e.target;
         setData((prevData) => ({
@@ -17,8 +22,35 @@ const ContactUs = () => {
         }));
     };
     
-    const handleSubmit = (e)=>{
+    const handleSubmit = async(e)=>{
         e.preventDefault()
+
+        const dataResponse = await fetch(SummaryApi.contactUs.url,{
+            method : SummaryApi.contactUs.method,
+            headers : {
+                "content-type" : "application/json"
+            },
+            body : JSON.stringify(data)
+        })
+        const dataApi = await dataResponse.json()
+
+        if(dataApi.success){
+            toast.success(dataApi.message)
+            setData({
+                fullName:"",
+                email:"",
+                name:"",
+                dropdown:"",
+                message:"",
+                agree: false,
+            })
+            navigate('/')
+        }
+        if(dataApi.error){
+            toast.error(dataApi.message)
+        }
+
+        // console.log('data', dataApi)
     }
     // useEffect(() => {
     //     console.log("Data:", data);
