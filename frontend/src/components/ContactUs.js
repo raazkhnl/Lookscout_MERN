@@ -8,7 +8,8 @@ const ContactUs = () => {
         fullName:"",
         email:"",
         name:"",
-        dropdown:"",
+        phone:"",
+        category:"",
         message:"",
         agree: false,
     })
@@ -40,7 +41,8 @@ const ContactUs = () => {
                 fullName:"",
                 email:"",
                 name:"",
-                dropdown:"",
+                phone:"",
+                category:"",
                 message:"",
                 agree: false,
             })
@@ -80,12 +82,12 @@ const ContactUs = () => {
                             <input type="tel"  name='phone' value={data.phone} onChange={handleOnChange} className="form-control custom-placeholder" id="phoneNumber" placeholder="+000" required/>
                         </div>
                         <div className="form-group col-md-6">
-                            <label htmlFor="dropdown">Get In Touch With Us</label>
-                            <select id="dropdown"  name='dropdown' onChange={handleOnChange} className="form-control custom-placeholder">
+                            <label htmlFor="category">Get In Touch With Us</label>
+                            <select id="category"  name='category' onChange={handleOnChange} className="form-control custom-placeholder" >
                                 <option value="">Choose...</option>
-                                <option value="Option 1">Option 1</option>
-                                <option value="Option 2">Option 2</option>
-                                <option value="Option 3">Option 3</option>
+                                <option value="Services">Services</option>
+                                <option value="Products">Products</option>
+                                <option value="Customer Support">Customer Support</option>
                             </select>
                         </div>
                     </div>

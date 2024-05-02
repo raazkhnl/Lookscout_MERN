@@ -88,7 +88,7 @@ const Features= () => {
           <p><i className="fas fa-check text-primary pe-2"></i>99.9% guaranteed uptime SLA</p>
           <p><i className="fas fa-check text-primary pe-2"></i>Designated customer success team</p>
         </div>
-        <button className="btn btn-primary py-2 px-4 my-2" type="submit"  >Start Now <i class="fa-solid fa-arrow-right text-white"></i></button>
+        <button className="btn btn-primary py-2 px-4 my-2" type="submit"  >Start Now <i className="fa-solid fa-arrow-right text-white"></i></button>
 
         </div>
         <div className="col-12 col-md-6 img-fluid">

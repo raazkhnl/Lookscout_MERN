@@ -31,7 +31,7 @@ const Teams = () => {
             <p className='text-center '>Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment of people and great talent that truly rocks.</p>
             <div className="row mx-4 px-4 py-2">
             {cards.map((card) => (
-                <div className="col-12 col-md-4">
+                <div className="col-12 col-md-4" key={card.id}>
                     <div className='text-center'>
                         <img src={card.photo} className="img-fluid px-4" alt="demo" />
                     </div>

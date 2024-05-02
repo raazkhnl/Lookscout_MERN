@@ -16,7 +16,7 @@ const FAQ = () => {
     },
     {
         id: 2,
-        qn: 'Cras vitae, scelerisque tortor augue.',
+        qn: 'Cras vitae, scelerisque tortor augue, semper viverra.',
         ans: 'Porttitor nec est nisi, id nunc.',
         dutation: 'Today'
     },
