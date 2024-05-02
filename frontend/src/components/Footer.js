@@ -33,16 +33,16 @@ const Footer = () => {
       </div>
 
       {/* Main Footer */}
-      <div className="row container-fluid mx-auto py-4">
+      <div className="row container-fluid mx-auto pt-4 pb-1">
   {/* 1st Column */}
-  <div className="col-md-2 mx-auto col-12 custom-padding pb-3">
+  <div className="col-md-2 mx-auto col-12  custom-padding pb-4">
     <img className='img-fluid' src={logo} alt="Logo" />
     <p>Generate outside the box thinking with the possibility to target the low.</p>
     <div className="d-flex justify-content-between custom-social">
-<i class="fa-brands fa-facebook mx-1"></i>
-<i class="fa-brands fa-google mx-1"></i>
-<i class="fa-brands fa-apple mx-1"></i>
-<i class="fa-brands fa-instagram mx-1"></i>
+<i className="fa-brands fa-facebook mx-1"></i>
+<i className="fa-brands fa-google mx-1"></i>
+<i className="fa-brands fa-apple mx-1"></i>
+<i className="fa-brands fa-instagram mx-1"></i>
 
     </div>
   </div>

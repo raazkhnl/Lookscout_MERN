@@ -10,6 +10,9 @@
   border-radius: 0.5rem;
   font-size: 1rem;
 }
+.mainbg-color{
+  background-color: #F8F9FB;
+}
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 .overflow-hidden::-webkit-scrollbar {
@@ -22,8 +25,8 @@
   scrollbar-width: none;  /* Firefox */
 }
 
-.placeholder{
-  background-color:#2C3444;
+.custom-placeholder{
+  background-color:#4a505b;
   border:none;
   margin-top: 10px;
 }
