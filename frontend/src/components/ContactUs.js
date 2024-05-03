@@ -51,12 +51,8 @@ const ContactUs = () => {
         if(dataApi.error){
             toast.error(dataApi.message)
         }
-
-        // console.log('data', dataApi)
     }
-    // useEffect(() => {
-    //     console.log("Data:", data);
-    // }, [data]);
+   
 
   return (
     <div style={{backgroundColor:'#151B28'}} id="contactUs">
