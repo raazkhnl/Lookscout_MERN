@@ -38,8 +38,7 @@ Looksout is a web application built using the MERN (MongoDB, Express.js, React, 
 
 3. Create a `.env` file in the backend folder with the following content:
 
-   MONGODB_URI=mongodb+srv://<username>:<password>@lookscoutcluster.vck7iwl.mongodb.net/LookscoutDB?retryWrites=true&w=majority&appName=LookscoutCluster 
-   FRONTEND_URL=http://localhost:3000
+   `MONGODB_URI=mongodb+srv://<username>:<password>@lookscoutcluster.vck7iwl.mongodb.net/LookscoutDB?retryWrites=true&w=majority&appName=LookscoutCluster FRONTEND_URL=http://localhost:3000`
 
 4. Run backend
 
@@ -60,7 +59,7 @@ Looksout is a web application built using the MERN (MongoDB, Express.js, React, 
 4. Deploy!
 
 ## Note
-Remember to replace the placeholders (<repository_url>, <username>, <password> etc.) with the actual values relevant to your project.
+Remember to replace the placeholders (repository_url, username, password,etc.) with the actual values relevant to your project.
 
 ## License
 ## Copyright
