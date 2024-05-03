@@ -6,11 +6,12 @@ const router = require('./routes')
 
 
 const app = express()
+// Enable CORS for all routes
 app.use(cors({
-    origin : process.env.FRONTEND_URL,
-    methods: ["POST", "GET"],
-    credentials : true
-}))
+    origin: process.env.FRONTEND_URL, // Set this to the frontend URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true,
+}));
 app.use(express.json())
 app.use("/api",router)
 
