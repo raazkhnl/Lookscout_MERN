@@ -3,6 +3,8 @@ const cors = require('cors')
 require('dotenv').config()
 const connectDB = require('./config/db')
 const router = require('./routes')
+const cookieParser = require('cookie-parser')
+const bodyParser = require('body-parser')
 
 
 const app = express()
@@ -12,7 +14,18 @@ app.use(cors({
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true,
 }));
+app.use(bodyParser.json({limit: '35mb'}));
+
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+    limit: '35mb',
+    parameterLimit: 50000,
+  }),
+);
 app.use(express.json())
+app.use(cookieParser())
+
 app.use("/api",router)
 
 const PORT = 8080 || process.env.PORT
@@ -24,6 +37,8 @@ connectDB().then(()=>{
         console.log("Server is running "+PORT)
     })
 })
+
+//Base BackendURL
 app.get("/", (req,res)=>{
     res.json("Backend Connected.")
 })

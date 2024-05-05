@@ -10,6 +10,9 @@ async function contactUsController(req, res){
         if(!fullName){
             throw new Error("Please provide your name.")
         }
+        if(!message){
+            throw new Error("Please provide your phone no.")
+        }
         const contactUsData = new contactUsModel(req.body)
         const saveData = await contactUsData.save()
         res.status(200).json({

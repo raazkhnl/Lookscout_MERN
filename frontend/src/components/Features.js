@@ -16,7 +16,7 @@ const Features= () => {
         id: 1,
         icon: icon3,
         title: `Fast Connection`,
-        content: 'Completely pursue scalable customer cross- media through potentialities. Holistically quickly installed portals.'
+        content: 'Completely pursue scalable customer cross-media through potentialities. Holistically quickly installed portals.'
       },
       {
         id: 2,
