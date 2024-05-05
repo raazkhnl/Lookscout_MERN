@@ -56,7 +56,7 @@ const ContactUs = () => {
 
   return (
     <div style={{backgroundColor:'#151B28'}} id="contactUs">
-      <div className="container p-5 mt-4 text-white" >
+      <div className="container p-5 text-white" >
         <div className='text-center' id="contactSec">
         <h2>Get In Touch With Us</h2>
                 <p className='text-muted'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>

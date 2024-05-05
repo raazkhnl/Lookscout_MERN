@@ -41,7 +41,7 @@ const LogIn = () => {
 
       if (dataApi.success) {
         toast.success(dataApi.message)
-        navigate("/")
+        navigate("/profile")
         fetchUserDetails()
       }
 
@@ -53,7 +53,7 @@ const LogIn = () => {
 
   return (
 <div className='container-fluid' style={{backgroundColor:'#151B28'}} id="contactUs">
-    <div className="row mt-5">
+    <div className="row">
       <div className="container col-10 col-md-6 my-5 text-white rounded p-4" style={{backgroundColor:'#1C2534'}}>
         <div className='position-relative text-center'>
           <img className="rounded-circle " style={{ height: '80px', width:'80px'}} src={loginIcons} alt='Login Icon'  />

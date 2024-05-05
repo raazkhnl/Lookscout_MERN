@@ -1,11 +1,11 @@
-import React, { useContext, useState } from 'react'
+import React from 'react'
 import logo from "../assets/lookscout.svg"
 import userIcon from "../assets/userIcon.svg"
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setUserDetails } from '../store/userSlice';
 
-import Context from '../context';
+// import Context from '../context';
 import SummaryApi from '../common';
 import { toast } from 'react-toastify';
 
@@ -13,9 +13,9 @@ import { toast } from 'react-toastify';
 const Header = () => {
   const user = useSelector(state => state?.user?.user)
   const dispatch = useDispatch()
-  const context = useContext(Context)
+  // const context = useContext(Context)
   const navigate = useNavigate()
-  const [menuDisplay, setMenuDisplay] = useState(false)
+  // const [menuDisplay, setMenuDisplay] = useState(false)
 
 
   const handleLogout = async () => {
@@ -37,7 +37,7 @@ const Header = () => {
 
   }
   return (
-    <header className="navbar navbar-expand-lg p-2 mainbg-color fixed-top" >
+    <header className="navbar navbar-expand-lg p-2 mainbg-color sticky-top" >
       <div className="container-fluid mx-4">
         <Link className="navbar-brand" to="/"><img src={logo} alt='Lookscout' /></Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -67,15 +67,15 @@ const Header = () => {
             </li>
           </ul>
 
-          {user?._id ?
+          {user ?
             <div className="nav-item dropdown pe-3">
               <Link className="nav-link active nav-text" to="/" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
-                  <img src={user?.profilePic || userIcon} className="rounded-circle border border-2 p-1" alt={user?.name} style={{ height: '40px', width: '40px' }} />
+                  <img src={user?.profilePic || userIcon} className="rounded-circle border border-2" alt={user?.name} style={{ height: '40px', width: '40px' }} />
               </Link>
               <ul className="dropdown-menu custom-menu text-center">
-                <li><Link className="dropdown-item" to="/">Profile</Link></li>
+                <li><Link className="dropdown-item" to="/profile">Profile</Link></li>
                 <li><hr className="dropdown-divider" /></li>
-                <li><Link className="dropdown-item text-danger" onClick={handleLogout}>Logout <i class="fa-solid fa-right-from-bracket"></i></Link></li>
+                <li><Link className="dropdown-item text-danger" onClick={handleLogout}>Logout <i className="fa-solid fa-right-from-bracket"></i></Link></li>
               </ul>
             </div>
             :

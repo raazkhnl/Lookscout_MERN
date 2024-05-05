@@ -8,6 +8,8 @@ import ContactUs from "../components/ContactUs";
 import SignUp from "../pages/SignUp";
 import LogIn from "../pages/LogIn";
 import ForgotPassword from "../pages/ForgotPassword";
+import Profile from "../pages/Profile";
+import EditProfile from "../pages/EditProfile";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -28,6 +30,14 @@ const router = createBrowserRouter([
             {
                 path: "/forgot-password",
                 element: <ForgotPassword/>
+            },
+            {
+                path: "/profile",
+                element: <Profile/>
+            },
+            {
+                path: "/edit-user",
+                element: <EditProfile/>
             },
             {
                 path: "/contact-us",
