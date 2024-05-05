@@ -49,7 +49,7 @@ const ContactUs = () => {
             navigate('/')
         }
         if(dataApi.error){
-            toast.error(dataApi.message)
+            toast.error("Couldnot connect to database."+ dataApi.message)
         }
     }
    
