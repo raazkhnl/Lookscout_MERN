@@ -48,23 +48,11 @@ const SignUp = () => {
 
     if (data.password === data.confirmPassword) {
 
-      const dataResponse = await fetch(SummaryApi.signUp.url, {
-        method: SummaryApi.signUp.method,
-        headers: {
-          "content-type": "application/json"
-        },
-        body: JSON.stringify(data)
-      })
+      try {
+        
+      } catch (err) {
+        toast.warn("Could not connect to Database. "+ err.message)
 
-      const dataApi = await dataResponse.json()
-
-      if (dataApi.success) {
-        toast.success(dataApi.message)
-        navigate("/login")
-      }
-
-      if (dataApi.error) {
-        toast.error(dataApi.message)
       }
 
     } else {

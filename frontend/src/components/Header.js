@@ -19,20 +19,24 @@ const Header = () => {
 
 
   const handleLogout = async () => {
-    const fetchData = await fetch(SummaryApi.logout_user.url, {
-      method: SummaryApi.logout_user.method,
-      credentials: 'include'
-    })
-    const data = await fetchData.json()
-
-    if (data.success) {
-      toast.success(data.message)
-      dispatch(setUserDetails(null))
-      navigate("/")
-    }
-
-    if (data.error) {
-      toast.error(data.message)
+    try {
+      const fetchData = await fetch(SummaryApi.logout_user.url, {
+        method: SummaryApi.logout_user.method,
+        credentials: 'include'
+      })
+      const data = await fetchData.json()
+  
+      if (data.success) {
+        toast.success(data.message)
+        dispatch(setUserDetails(null))
+        navigate("/")
+      }
+  
+      if (data.error) {
+        toast.error(data.message)
+      }
+    } catch (err) {
+      toast.warn("Could not connect to Database. "+ err.message)
     }
 
   }
@@ -70,7 +74,7 @@ const Header = () => {
           {user ?
             <div className="nav-item dropdown pe-3">
               <Link className="nav-link active nav-text" to="/" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
-                  <img src={user?.profilePic || userIcon} className="rounded-circle border border-2" alt={user?.name} style={{ height: '40px', width: '40px' }} />
+                  <img src={user?.profilePic || userIcon} className="rounded-circle border border-2 border-success" alt={user?.name} style={{ height: '40px', width: '40px' }} />
               </Link>
               <ul className="dropdown-menu custom-menu text-center">
                 <li><Link className="dropdown-item" to="/profile">Profile</Link></li>

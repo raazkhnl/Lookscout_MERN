@@ -1,6 +1,8 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import userIcon from "../assets/userIcon.svg"
+
 
 const Profile = () => {
     const user = useSelector(state => state?.user?.user)
@@ -25,22 +27,22 @@ const Profile = () => {
         ],
       };
   return (
-<div className="container m-5 ">
-      <div className="row mx-auto">
-        <div className="col-md-4">
-          <div className="card">
-            <img src={user?.profilePic} className="img-fluid rounded-circle mx-auto mt-2 border border-success border-2" style={{height:"10rem", width:'10rem'}} alt="User Avatar" />
-            <hr />
-            <div className="px-2 pb-2">
+<div className="container my-2 my-md-5 ">
+      <div className="row card-group mx-auto ">
+        <div className="col-md-4 mb-3 mb-md-0 ">
+          <div className="card h-100">
+            <img src={user?.profilePic || userIcon } className="img-fluid rounded-circle mx-auto my-1 border border-success border-2" style={{height:"10rem", width:'10rem'}} alt="User Avatar" />
+            
+            <div className="px-2 pb-2 border-top ">
                 <div className='d-flex justify-content-between'>
-                <h2 className="card-title">{user?.name}</h2>
+                <h2 className="card-title">{user?.name|| "User"}</h2>
                 <Link className=" btn fa-solid fa-pen-to-square fs-3" to='/edit-user'></Link>
                 </div>
               {user?.bio || "Please, update your bio..."} <br />
-              <strong>Email</strong>: {user?.email} <br />
-              <strong>Role</strong>: {user?.role} <br />
-              <strong>Joine Since</strong>: {user?.createdAt} <br />
-              <strong>Updated At</strong>: {user?.updatedAt} <br />
+              <strong>Email</strong>: {user?.email || "unknown"} <br />
+              <strong>Role</strong>: {user?.role || "unknown"} <br />
+              <strong>Joine Since</strong>: {user?.createdAt || "unknown"} <br />
+              <strong>Updated At</strong>: {user?.updatedAt || "unknown"} <br />
               <strong>User Status</strong>: <strong className='text-success bg-light'>Active</strong> <br />
             </div>
           </div>
@@ -55,7 +57,7 @@ const Profile = () => {
             ))}
           </ul>
           <h2 className='pt-2'>Projects</h2>
-          <ul className="list-group">
+          <ul className="list-group mb-2">
             {users.projects?.map((project) => (
               <li key={project?.name} className="list-group-item">
                 <strong>{project?.name}</strong>: {project?.description}

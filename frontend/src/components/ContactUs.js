@@ -26,30 +26,34 @@ const ContactUs = () => {
     const handleSubmit = async(e)=>{
         e.preventDefault()
 
-        const dataResponse = await fetch(SummaryApi.contactUs.url,{
-            method : SummaryApi.contactUs.method,
-            headers : {
-                "content-type" : "application/json"
-            },
-            body : JSON.stringify(data)
-        })
-        const dataApi = await dataResponse.json()
-
-        if(dataApi.success){
-            toast.success(dataApi.message)
-            setData({
-                fullName:"",
-                email:"",
-                name:"",
-                phone:"",
-                category:"",
-                message:"",
-                agree: false,
+        try {
+            const dataResponse = await fetch(SummaryApi.contactUs.url,{
+                method : SummaryApi.contactUs.method,
+                headers : {
+                    "content-type" : "application/json"
+                },
+                body : JSON.stringify(data)
             })
-            navigate('/')
-        }
-        if(dataApi.error){
-            toast.error("Couldnot connect to database."+ dataApi.message)
+            const dataApi = await dataResponse.json()
+    
+            if(dataApi.success){
+                toast.success(dataApi.message)
+                setData({
+                    fullName:"",
+                    email:"",
+                    name:"",
+                    phone:"",
+                    category:"",
+                    message:"",
+                    agree: false,
+                })
+                navigate('/')
+            }
+            if(dataApi.error){
+                toast.error("Couldnot connect to database."+ dataApi.message)
+            }
+        } catch (err) {
+            toast.warn("Could not connect to Database. "+ err.message)
         }
     }
    

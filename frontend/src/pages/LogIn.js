@@ -26,27 +26,33 @@ const LogIn = () => {
   }
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+      e.preventDefault()
 
-      const dataResponse = await fetch(SummaryApi.logIn.url, {
-        method: SummaryApi.logIn.method,
-        credentials : 'include',
-        headers: {
-          "content-type": "application/json"
-        },
-        body: JSON.stringify(data)
-      })
-
-      const dataApi = await dataResponse.json()
-
-      if (dataApi.success) {
-        toast.success(dataApi.message)
-        navigate("/profile")
-        fetchUserDetails()
-      }
-
-      if (dataApi.error) {
-        toast.error(dataApi.message)
+      try {
+        const dataResponse = await fetch(SummaryApi.logIn.url, {
+          method: SummaryApi.logIn.method,
+          credentials : 'include',
+          headers: {
+            "content-type": "application/json"
+          },
+          body: JSON.stringify(data)
+        })
+  
+        const dataApi = await dataResponse.json()
+  
+        if (dataApi.success) {
+          toast.success(dataApi.message)
+          navigate("/profile")
+          fetchUserDetails()
+        }
+  
+        if (dataApi.error) {
+          toast.error(dataApi.message)
+        }
+        
+      } catch (err) {
+        toast.warn("Could not connect to Database. "+ err.message)
+        
       }
     }
 
@@ -70,6 +76,8 @@ const LogIn = () => {
             onChange={handleOnChange}
             required
             className='form-control mb-3'
+            autoComplete="username"
+
           />
 
           <label htmlFor='password' className='form-label'>Password :</label>
@@ -82,6 +90,7 @@ const LogIn = () => {
               onChange={handleOnChange}
               required
               className='form-control mb-3'
+              autoComplete="current-password"
             />
 
           <div className='text-center'>
