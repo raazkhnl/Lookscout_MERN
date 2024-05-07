@@ -9,11 +9,34 @@ const bodyParser = require('body-parser')
 
 const app = express()
 // Enable CORS for all routes
+// app.use(cors({
+//     origin: process.env.FRONTEND_URL, // Set this to the frontend URL
+//     methods: ['GET', 'HEAD', 'POST', 'PUT', 'DELETE'],
+//     credentials: true, // Enable cookies and credentials to pass through the request
+// }));
+
+// Alt. Define the allowed origins (frontend URLs)
+const allowedOrigins = [
+    'http://localhost:3000',
+    'https://lookscout-mern.vercel.app',
+    'https://lookscout-mern.vercel.app/',
+
+];
+
 app.use(cors({
-    origin: process.env.FRONTEND_URL, // Set this to the frontend URL
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true,
+    origin: (origin, callback) => {
+        if (allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
+    methods: ['GET', 'HEAD', 'POST', 'PUT', 'DELETE'],
+    credentials: true, // Enable cookies and credentials to pass through the request
 }));
+
+
+
 app.use(bodyParser.json({limit: '35mb'}));
 
 app.use(
