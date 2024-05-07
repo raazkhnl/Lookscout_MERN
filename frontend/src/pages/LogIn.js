@@ -52,7 +52,6 @@ const LogIn = () => {
         
       } catch (err) {
         toast.warn("Could not connect to Database. "+ err.message)
-        
       }
     }
 
