@@ -11,6 +11,9 @@
         "src": "/(.*)",
         "dest": "/"
       }
+    ],
+    " redirects": [
+      { "source": "/(.*)", "destination": "https://lookscout-mern.vercel.app/$1", "permanent": true }
     ]
   }
   
