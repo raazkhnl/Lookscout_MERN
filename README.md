@@ -1,12 +1,15 @@
 # Looksout: A MERN Stack App
+
 ![Looksout Screenshot](./Screenshot.png)
 
-
 ## Description
+
 Looksout is a web application built using the MERN (MongoDB, Express.js, React, Node.js) stack. It allows users to navigate through the full-stacked website seamlessly.
 
 ## Installation
+
 ### Frontend
+
 1. Clone the repository:
 
    `git clone <repository_url>`
@@ -25,9 +28,10 @@ Looksout is a web application built using the MERN (MongoDB, Express.js, React, 
 
 5. Run frontend
 
-    `npm start`
+   `npm start`
 
 ### Backend
+
 1. Navigate to the backend folder:
 
    `cd backend`
@@ -42,27 +46,31 @@ Looksout is a web application built using the MERN (MongoDB, Express.js, React, 
 
 4. Run backend
 
-    `npm run dev`
-
+   `npm run dev`
 
 ## Deployment
+
 ### Vercel Deployment (Frontend)
+
 1. Choose `Create React App` as the project type.
 2. Point Vercel to the frontend folder.
 3. Configure environment variables (as above).
 4. Deploy!
 
 ### Vercel Deployment (Backend)
+
 1. Choose `Other` as the project type.
 2. Point Vercel to the backend folder.
 3. Configure environment variables (as above).
 4. Deploy!
 
 ## Note
+
 Remember to replace the placeholders (`<repository_url>, <username>, <password>` etc.) with the actual values relevant to your project.
 
 ## License
+
 ## Copyright
+
 `© 2024 RaaZ Khanal`
-
-
+raazkhnl@gmail.com
