@@ -77,6 +77,7 @@ const LogIn = () => {
             className='form-control mb-3'
             autoComplete="username"
 
+
           />
 
           <label htmlFor='password' className='form-label'>Password :</label>
@@ -90,6 +91,7 @@ const LogIn = () => {
               required
               className='form-control mb-3'
               autoComplete="current-password"
+
             />
 
           <div className='text-center'>

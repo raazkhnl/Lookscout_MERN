@@ -98,6 +98,8 @@ const SignUp = () => {
             onChange={handleOnChange}
             required
             className='form-control mb-3'
+            autoComplete="username"
+
           />
 
           <label htmlFor='password' className='form-label'>Password :</label>
@@ -110,6 +112,7 @@ const SignUp = () => {
               onChange={handleOnChange}
               required
               className='form-control mb-3'
+              autocomplete="new-password"
             />
 
           <label htmlFor='confirmPassword' className='form-label'>Confirm Password :</label>
@@ -122,6 +125,7 @@ const SignUp = () => {
               onChange={handleOnChange}
               required
               className='form-control mb-3'
+              autocomplete="new-password"
             />
 
           <div className='text-center'>
