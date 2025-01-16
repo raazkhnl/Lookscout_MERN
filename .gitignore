@@ -1,6 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-.env
+# Ignore .env files in both backend and frontend
+backend/.env
+frontend/.env
 # dependencies
 /node_modules
 /.pnp
@@ -11,6 +12,7 @@
 
 # production
 /build
+/*/.env
 
 # misc
 .DS_Store
