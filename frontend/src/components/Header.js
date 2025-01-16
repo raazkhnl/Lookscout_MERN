@@ -49,7 +49,7 @@ const Header = () => {
               <Link className="nav-link active nav-text" aria-current="page" to="/" >Home</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link active nav-text" to="/" >Our Products</Link>
+              <Link className="nav-link active nav-text" to="/contact-us">Contacts</Link>
             </li>
             <li className="nav-item dropdown">
               <Link className="nav-link dropdown-toggle active nav-text" to="/" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
@@ -59,18 +59,16 @@ const Header = () => {
                 <li><Link className="dropdown-item" to="/">Action</Link></li>
                 <li><Link className="dropdown-item" to="/">Another action</Link></li>
                 <li><hr className="dropdown-divider" /></li>
-                <li><Link className="dropdown-item" to="/">Something else here</Link></li>
+                <li><Link className="dropdown-item" to="/">Something else</Link></li>
               </ul>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link active nav-text" to="/contact-us">Contacts</Link>
-            </li>
+
           </ul>
 
           {user ?
             <div className="nav-item dropdown pe-3">
               <Link className="nav-link active nav-text" to="/" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
-                  <img src={user?.profilePic || userIcon} className="rounded-circle border border-2" alt={user?.name} style={{ height: '40px', width: '40px' }} />
+                <img src={user?.profilePic || userIcon} className="rounded-circle border border-2" alt={user?.name} style={{ height: '40px', width: '40px' }} />
               </Link>
               <ul className="dropdown-menu custom-menu text-center">
                 <li><Link className="dropdown-item" to="/profile">Profile</Link></li>

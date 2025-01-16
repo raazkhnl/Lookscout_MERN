@@ -9,14 +9,14 @@ import Context from '../context';
 
 const EditProfile = () => {
   const user = useSelector(state => state?.user?.user)
-  const { fetchUserDetails} = useContext(Context)
+  const { fetchUserDetails } = useContext(Context)
 
   const [data, setData] = useState({
-    userId : user?._id,
+    userId: user?._id,
     name: user?.name,
     email: user?.email,
     profilePic: user?.profilePic,
-    bio: user?.bio 
+    bio: user?.bio
   })
   const navigate = useNavigate()
 
@@ -79,33 +79,33 @@ const EditProfile = () => {
   }
 
   return (
-<div className='container-fluid' style={{backgroundColor:'#151B28'}} id="contactUs">
-    <div className="row">
-      <div className="container col-10 col-md-6 my-5 text-white rounded p-4" style={{backgroundColor:'#1C2534'}}>
-        <div className='position-relative text-center'>
-          <img className="rounded-circle " style={{ height: '80px', width:'80px'}} src={data?.profilePic || loginIcons} alt='Profile Pic'  />
-          <form>
-            <label htmlFor='uploadPhoto' className='text-small  bg-primary rounded p-1 m-1' style={{ cursor: 'pointer' }}>
-              Choose Photo
-              <input id='uploadPhoto' type='file' className='d-none' onChange={handleUploadPic} />
-            </label>
-          </form>
-        </div>
+    <div className='container-fluid' style={{ backgroundColor: '#151B28' }} id="contactUs">
+      <div className="row">
+        <div className="container col-10 col-md-6 my-5 text-white rounded p-4" style={{ backgroundColor: '#1C2534' }}>
+          <div className='position-relative text-center'>
+            <img className="rounded-circle " style={{ height: '80px', width: '80px' }} src={data?.profilePic || loginIcons} alt='Profile Pic' />
+            <form>
+              <label htmlFor='uploadPhoto' className='text-small  bg-primary rounded p-1 m-1' style={{ cursor: 'pointer' }}>
+                Choose Photo
+                <input id='uploadPhoto' type='file' className='d-none' onChange={handleUploadPic} />
+              </label>
+            </form>
+          </div>
 
-        <form className='pt-6' onSubmit={handleSubmit}>
-          <label htmlFor='name' className='form-label'>Full Name :</label>
-          <input
-            id='name'
-            type='text'
-            placeholder='Enter your name'
-            name='name'
-            value={data?.name}
-            onChange={handleOnChange}
-            required
-            className='form-control mb-3'
-          />
+          <form className='pt-6' onSubmit={handleSubmit}>
+            <label htmlFor='name' className='form-label'>Full Name :</label>
+            <input
+              id='name'
+              type='text'
+              placeholder='Enter your name'
+              name='name'
+              value={data?.name}
+              onChange={handleOnChange}
+              required
+              className='form-control mb-3'
+            />
 
-          <label htmlFor='email' className='form-label'>Email :</label>
+            {/* <label htmlFor='email' className='form-label'>Email :</label>
           <input
             id='email'
             type='email'
@@ -115,31 +115,30 @@ const EditProfile = () => {
             onChange={handleOnChange}
             required
             className='form-control mb-3'
-          />
+          /> */}
 
-          <label htmlFor='bio' className='form-label'>Bio :</label>
-          <input
-            id='bio'
-            type='text'
-            placeholder='Update your bio...'
-            name='bio'
-            value={data?.bio}
-            onChange={handleOnChange}
-            required
-            className='form-control mb-3'
-          />
-          
+            <label htmlFor='bio' className='form-label'>Bio :</label>
+            <textarea
+              id='bio' type='description'
+              placeholder='Update your bio...'
+              name='bio'
+              value={data?.bio}
+              onChange={handleOnChange}
+              required
+              className='form-control mb-3'
+            />
 
-          <div className='text-center'>
-          <button
-            type='submit'
-            className='btn btn-primary mx-auto'
-          >
-            Update Profile
-          </button>
-          </div>
-        </form>
-      </div>
+
+            <div className='text-center'>
+              <button
+                type='submit'
+                className='btn btn-primary mx-auto'
+              >
+                Update Profile
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
 
