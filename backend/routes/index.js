@@ -15,13 +15,13 @@ const updateUser = require('../controller/user/updateUser')
 router.post('/contact-us', contactUsController)
 
 // User
-router.post("/signup",userSignUpController)
-router.post("/login",userSignInController)
-router.get("/user-details",authToken,userDetailsController)
-router.get("/userLogout",userLogout)
+router.post("/signup", userSignUpController)
+router.post("/login", userSignInController)
+router.get("/user-details", authToken, userDetailsController)
+router.get("/userLogout", userLogout)
 
 //Admin 
-router.get("/all-user",authToken,allUsers)
-router.post("/update-user",authToken,updateUser)
+router.get("/all-user", authToken, allUsers)
+router.post("/update-user", authToken, updateUser)
 
-module.exports= router
+module.exports = router
