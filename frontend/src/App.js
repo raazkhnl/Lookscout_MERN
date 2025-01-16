@@ -28,7 +28,7 @@ function App() {
 }
 useEffect(()=>{
   /**user Details */
-  fetchUserDetails()
+  fetchUserDetails() // eslint-disable-next-line
 },[])
   return (
     <>
