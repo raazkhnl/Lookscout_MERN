@@ -12,7 +12,9 @@ const app = express();
 const allowedOrigins = [
     'http://localhost:3000',
     'https://lookscout-mern.vercel.app',
-    'https://lookscout-mern.vercel.app/'
+    'https://lookscout-mern.vercel.app/',
+    'https://app.d1gev5ho2rcdwm.amplifyapp.com',
+    'https://app.d1gev5ho2rcdwm.amplifyapp.com/'
 ];
 
 // Enable CORS for all routes
