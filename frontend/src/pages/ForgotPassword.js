@@ -61,29 +61,29 @@ const ForgotPassword = () => {
   }
 
   return (
-<div className='container-fluid' style={{backgroundColor:'#151B28'}} id="contactUs">
-    <div className="row">
-      <div className="container col-10 col-md-6 my-5 text-white rounded p-4" style={{backgroundColor:'#1C2534'}}>
-        <div className='position-relative text-center'>
-          <img className="rounded-circle " style={{ height: '80px', width:'80px'}} src={loginIcons} alt='Profile Pic'  />
-        </div>
+    <div className='container-fluid' style={{ backgroundColor: '#151B28' }} id="contactUs">
+      <div className="row">
+        <div className="container col-10 col-md-6 my-5 text-white rounded p-4" style={{ backgroundColor: '#1C2534' }}>
+          <div className='position-relative text-center'>
+            <img className="rounded-circle " style={{ height: '80px', width: '80px' }} src={loginIcons} alt='Profile Pic' />
+          </div>
 
-        <form className='pt-6' onSubmit={handleSubmit}>
-          <label htmlFor='email' className='form-label'>Email :</label>
-          <input
-            id='email'
-            type='email'
-            placeholder='Enter email'
-            name='email'
-            value={data.email}
-            onChange={handleOnChange}
-            required
-            className='form-control mb-3'
-            autocomplete="username"
+          <form className='pt-6' onSubmit={handleSubmit}>
+            <label htmlFor='email' className='form-label'>Email :</label>
+            <input
+              id='email'
+              type='email'
+              placeholder='Enter email'
+              name='email'
+              value={data.email}
+              onChange={handleOnChange}
+              required
+              className='form-control mb-3'
+              autoComplete="username"
 
-          />
+            />
 
-          <label htmlFor='password' className='form-label'>New Password :</label>
+            <label htmlFor='password' className='form-label'>New Password :</label>
             <input
               id='password'
               type="password"
@@ -93,35 +93,35 @@ const ForgotPassword = () => {
               onChange={handleOnChange}
               required
               className='form-control mb-3'
-              autocomplete="new-password"
+              autoComplete="new-password"
 
             />
 
-          <label htmlFor='confirmPassword' className='form-label'>Confirm New Password :</label>
+            <label htmlFor='confirmPassword' className='form-label'>Confirm New Password :</label>
             <input
               id='confirmPassword'
-              type= "password"
+              type="password"
               placeholder='Enter confirm password'
               value={data.confirmPassword}
               name='confirmPassword'
               onChange={handleOnChange}
               required
               className='form-control mb-3'
-              autocomplete="new-password"
+              autoComplete="new-password"
             />
 
-          <div className='text-center'>
-          <button
-            type='submit'
-            className='btn btn-primary mx-auto'
-          >
-            Reset Password
-          </button>
-          </div>
-        </form>
+            <div className='text-center'>
+              <button
+                type='submit'
+                className='btn btn-primary mx-auto'
+              >
+                Reset Password
+              </button>
+            </div>
+          </form>
 
-        <p className='my-3'>Create a new account? <Link to={"/signup"} className='text-danger'>Signup</Link></p>
-      </div>
+          <p className='my-3'>Create a new account? <Link to={"/signup"} className='text-danger'>Signup</Link></p>
+        </div>
       </div>
     </div>
 

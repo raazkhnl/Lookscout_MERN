@@ -8,11 +8,25 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-// Enable CORS for all origins
+// Define allowed origins
+const allowedOrigins = [
+    'http://localhost:3000',
+    'https://lookscout-mern.vercel.app',
+    'https://lookscout-mern.vercel.app/'
+];
+
+// Enable CORS for all routes
 app.use(cors({
-    origin: '*', // Allow all origins
-    methods: ['GET', 'HEAD', 'POST', 'PUT', 'DELETE'], // Specify allowed HTTP methods
-    credentials: true // Enable cookies and credentials
+    origin: (origin, callback) => {
+        // Allow requests with no origin (e.g., mobile apps or server-to-server calls)
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
+    methods: ['GET', 'HEAD', 'POST', 'PUT', 'DELETE'],
+    credentials: true // Enable cookies and credentials to pass through the request
 }));
 
 // Middleware setup
@@ -30,7 +44,7 @@ app.use("/api", router);
 
 // Base endpoint to confirm backend connection
 app.get("/", (req, res) => {
-    res.json({ success: "true", message: "LISTENING TO THE REQUESTS..", timestamp: new Date().toISOString() });
+    res.json({ success: "true", message: "Listening for the requests...", timestamp: new Date().toISOString() });
 });
 
 // Port and Database Connection

@@ -70,7 +70,7 @@ const LogIn = () => {
               onChange={handleOnChange}
               required
               className='form-control mb-3'
-              autocomplete="username"
+              autoComplete="username"
             />
 
             <label htmlFor='password' className='form-label'>Password :</label>
@@ -83,7 +83,7 @@ const LogIn = () => {
               onChange={handleOnChange}
               required
               className='form-control mb-3'
-              autocomplete="current-password"
+              autoComplete="current-password"
             />
 
             <div className='text-center'>
