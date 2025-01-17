@@ -28,7 +28,8 @@ app.use(cors({
         }
     },
     methods: ['GET', 'HEAD', 'POST', 'PUT', 'DELETE'],
-    credentials: true // Enable cookies and credentials to pass through the request
+    credentials: true, // Enable cookies and credentials to pass through the request
+
 }));
 
 // Middleware setup
